@@ -3,7 +3,6 @@
     <Title id="title"/>
     <Generator id="generator"/>
     <Resources id="resources"/>
-    <Vis id="vis"/>
   </div>
 </template>
 
@@ -11,15 +10,13 @@
 import Title from './components/Title.vue'
 import Generator from './components/Generator.vue'
 import Resources from './components/Resources.vue'
-import Vis from './components/Vis.vue'
 
 export default {
   name: 'app',
   components: {
     Title,
     Generator,
-    Resources,
-    Vis
+    Resources
   }
 }
 </script>
@@ -31,31 +28,26 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 
-  display: grid;
-  grid-template-areas: 
-    "title title title"
-    "generator vis vis"
-    "generator resources resources";
-  grid-template-rows: 5rem 60% auto;
-  grid-gap: 1rem;
+  display: flex;
+  flex-direction: column;
 
   min-height: 95vh;
   min-width: 90vw;
 }
 
 #title {
-  grid-area: title;
+  height: 5em;
+  flex: 0;
 }
 
 #generator {
-  grid-area: generator;
+  flex: 1 1;
+  margin: 1em;
 }
 
 #resources {
-  grid-area: resources;
+  flex: 1 1;
+  margin: 1em;
 }
 
-#vis {
-  grid-area: vis;
-}
 </style>
