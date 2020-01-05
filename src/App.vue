@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Title id="title"/>
+    <Generator id="generator"/>
+    <Resources id="resources"/>
+    <Vis id="vis"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Title from './components/Title.vue'
+import Generator from './components/Generator.vue'
+import Resources from './components/Resources.vue'
+import Vis from './components/Vis.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Title,
+    Generator,
+    Resources,
+    Vis
   }
 }
 </script>
@@ -21,8 +29,33 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
+  display: grid;
+  grid-template-areas: 
+    "title title title"
+    "generator vis vis"
+    "generator resources resources";
+  grid-template-rows: 5rem 60% auto;
+  grid-gap: 1rem;
+
+  min-height: 95vh;
+  min-width: 90vw;
+}
+
+#title {
+  grid-area: title;
+}
+
+#generator {
+  grid-area: generator;
+}
+
+#resources {
+  grid-area: resources;
+}
+
+#vis {
+  grid-area: vis;
 }
 </style>
