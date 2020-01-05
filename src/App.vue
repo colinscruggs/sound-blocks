@@ -22,32 +22,31 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
 
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  min-height: 95vh;
-  min-width: 90vw;
-}
+    min-height: 95vh;
+    min-width: 90vw;
+  }
 
-#title {
-  height: 5em;
-  flex: 0;
-}
+  #title {
+    height: 5em;
+    flex: 0;
+  }
 
-#generator {
-  flex: 1 1;
-  margin: 1em;
-}
+  #generator {
+    flex: 1 1;
+    margin: 1em;
+  }
 
-#resources {
-  flex: 1 1;
-  margin: 1em;
-}
-
+  #resources {
+    flex: 1 1;
+    margin: 1em;
+  }
 </style>

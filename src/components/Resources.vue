@@ -1,6 +1,6 @@
 <template>
   <div class="resources">
-
+    <h3>Resources</h3>
   </div>
 </template>
 
@@ -12,8 +12,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .resources {
-        -webkit-box-shadow: 0px 6px 18px 0px rgba(0,0,0,0.35); 
-        box-shadow: 0px 6px 18px 0px rgba(0,0,0,0.35);
-    }
+  .resources {
+    -webkit-box-shadow: 0px 6px 18px 0px rgba(0,0,0,0.35); 
+    box-shadow: 0px 6px 18px 0px rgba(0,0,0,0.35);
+    background-color: #333333;
+    color: #fafafa;
+  }
+
+  h3 {
+    margin-left: 1em;
+  }
 </style>
