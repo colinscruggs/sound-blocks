@@ -2,7 +2,7 @@
   <div>
     <h1>sound blocks</h1>
     <div id="desc">
-    <h4>a drag-and-drop playground for audio synthesis</h4>
+    <h4>a modular playground for audio synthesis</h4>
     <h4>created by Colin Scruggs</h4>
     </div>
   </div>

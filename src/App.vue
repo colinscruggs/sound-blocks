@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Title id="title"/>
-    <Generator id="generator"/>
+    <Generator 
+      id="generator"
+      :waveform=selectedParams.waveform />
     <Resources id="resources"/>
   </div>
 </template>
@@ -17,6 +19,30 @@ export default {
     Title,
     Generator,
     Resources
+  },
+  data: function () {
+    return {
+      waveform: { 
+        sine: 'sine',
+        square: 'square',
+        triange: 'triangle',
+        sawtooth: 'sawtooth'
+      },
+      volumeEnv: {
+        attack: 0.01,
+        decay: 0.1,
+        sustain: 0.5,
+        release: 1
+      },
+      volumeEnvCurves: {
+        attackCurve: 'linear',
+        decayCurve: 'exponential',
+        releaseCurve: 'exponential'
+      },
+      selectedParams: {
+        waveform: 'square'
+      }
+    }
   }
 }
 </script>
@@ -46,7 +72,7 @@ export default {
   }
 
   #resources {
-    flex: 1 1;
+    flex: 1.5 1;
     margin: 1em;
   }
 </style>
