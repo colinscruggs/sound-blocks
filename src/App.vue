@@ -1,31 +1,48 @@
 <template>
   <div id="app">
     <Title id="title"/>
-    <Generator 
-      id="generator"
-      :waveform=selectedParams.waveform />
-    <Resources id="resources"/>
+
+    <Generator id="generator"
+      :params=selectedParams
+    />
+
+    <div id="control-panel">
+      <h3>Control Panel</h3>
+        <div id="container">
+          <div id="waveforms" class="bin">
+            <h4>Waveform</h4>
+            <Block v-for="(value, name) of waveforms" 
+              v-on:click.native="() => selectedParams.waveform = name"
+              :key="name"
+              :value="name"
+              :type="'waveform'"
+              :selected="name === selectedParams.waveform ? true : false"
+            />
+          </div>
+        </div>
+    </div>
+
   </div>
 </template>
 
 <script>
 import Title from './components/Title.vue'
 import Generator from './components/Generator.vue'
-import Resources from './components/Resources.vue'
+import Block from './components/Block.vue'
 
 export default {
   name: 'app',
   components: {
     Title,
     Generator,
-    Resources
+    Block
   },
   data: function () {
     return {
-      waveform: { 
+      waveforms: { 
         sine: 'sine',
         square: 'square',
-        triange: 'triangle',
+        triangle: 'triangle',
         sawtooth: 'sawtooth'
       },
       volumeEnv: {
@@ -40,7 +57,7 @@ export default {
         releaseCurve: 'exponential'
       },
       selectedParams: {
-        waveform: 'square'
+        waveform: 'sine'
       }
     }
   }
@@ -71,8 +88,32 @@ export default {
     margin: 1em;
   }
 
-  #resources {
+  #control-panel {
     flex: 1.5 1;
     margin: 1em;
+    -webkit-box-shadow: 0px 6px 18px 0px rgba(0,0,0,0.35); 
+    box-shadow: 0px 6px 18px 0px rgba(0,0,0,0.35);
+    background-color: #333333;
+    color: #fafafa;
+  }
+
+  #control-panel h3 {
+    margin-left: 1em;
+  }
+
+  #container {
+    margin: 0em 2em 1em 2em;
+    display: flex;
+    width: 100%;
+  }
+
+  .bin {
+    background-color: #cccccc;
+    max-width:fit-content;
+    padding: 0.5em;
+  }
+
+  .bin h4 {
+    margin: 0;
   }
 </style>

@@ -11,8 +11,10 @@ Tone.context.latencyHint = "fastest"
 export default {
   name: 'Generator',
   props: {
-    waveform: {
-      type: String
+    params: {
+      waveform: {
+        type: String
+      }
     }
   },
   data: function () {
@@ -28,7 +30,7 @@ export default {
     synth: function () {
       return new Tone.PolySynth(6, Tone.Synth, {
         oscillator : {
-          type : this.waveform
+          type : this.params.waveform
         }
       }).toMaster();
     }
@@ -41,7 +43,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
     .generator {
         -webkit-box-shadow: 0px 6px 18px 0px rgba(0,0,0,0.35); 
