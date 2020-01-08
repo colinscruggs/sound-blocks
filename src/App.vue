@@ -2,7 +2,7 @@
   <div id="app">
     <Title id="title"/>
 
-    <Generator id="generator"
+    <Visualizer id="visualizer"
       :params=selectedParams
     />
 
@@ -27,14 +27,14 @@
 
 <script>
 import Title from './components/Title.vue'
-import Generator from './components/Generator.vue'
+import Visualizer from './components/Visualizer.vue'
 import Block from './components/Block.vue'
 
 export default {
   name: 'app',
   components: {
     Title,
-    Generator,
+    Visualizer,
     Block
   },
   data: function () {
@@ -83,13 +83,13 @@ export default {
     flex: 0;
   }
 
-  #generator {
+  #visualizer {
     flex: 1 1;
     margin: 1em;
   }
 
   #control-panel {
-    flex: 1.5 1;
+    flex: 0 1;
     margin: 1em;
     -webkit-box-shadow: 0px 6px 18px 0px rgba(0,0,0,0.35); 
     box-shadow: 0px 6px 18px 0px rgba(0,0,0,0.35);
